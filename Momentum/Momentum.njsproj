@@ -33,6 +33,9 @@
     <Content Include="controllers\controller.js">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="models\malware.js">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="modules\sequence.js">
       <SubType>Code</SubType>
     </Content>
@@ -49,6 +52,7 @@
     <Folder Include="controllers\" />
     <Folder Include="modules\" />
     <Folder Include="helpers\" />
+    <Folder Include="models\" />
     <Folder Include="public\" />
     <Folder Include="public\images\" />
     <Folder Include="public\javascripts\" />
