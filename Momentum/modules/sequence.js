@@ -1,9 +1,7 @@
-var mongodb = require('mongodb');
-var mongoose = require('mongoose');
-var mongoClient = mongodb.MongoClient;
-var url = "mongodb+srv://jonas:freedown@cluster0.28oko.azure.mongodb.net/letterDB?retryWrites=true&w=majority"
-var dbName = "letterDB";
-var collectionName = "activity";
+const mongoose = require('mongoose');
+const url = "mongodb+srv://jonas:freedown@cluster0.28oko.azure.mongodb.net/letterDB?retryWrites=true&w=majority";
+const momentum = require('../models/momentum.js');
+const malware = require('../models/malware.js');
 
 exports.hello = (req, res) => {
     res.send('Project for sequence momentum!');
@@ -18,34 +16,29 @@ exports.save = (req, res) => {
 function save(val) {
     mongoose.connect(url, { useNewUrlParser: true });
     const db = mongoose.connection;
-    //db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+    const database = "letterDB";
+    const collection = db.model(database, momentum);
 
-    const CompletedSchema = new mongoose.Schema(
-        {
-            type: { type: String, enum: ['course', 'classroom'], required: true },
-            parentslug: { type: String, required: true },
-            slug: { type: String, required: true },
-            userid: { type: String, required: true }
-        },
-        { collection: collectionName }
-    );
-
-    //CompletedSchema.index({ slug: 1, userid: 1 }, { unique: true })
-
-    const model = mongoose.model(dbName, CompletedSchema);
-
-    return val;
-};
-
-function saveMongoDB(val) {
-    mongoClient.connect(url, function (err, database) {
-        if (err) throw err;
-        const db = database.db(dbName);
-        //const collection = db.collection(collectionName);
-        db.createCollection(collectionName, function (error, response) {
-            if (err) throw err;
-            database.close();
-        });
+    const item = new Array(item1 = {
+        name: val.list[0].name,
+        rank: val.list[0].rank,
+        check: val.list[0].check,
+        description: val.list[0].description
     });
+
+    const lista = {
+        name: val.name,
+        export: Date(),
+        framework: val.framework,
+        list: item
+    };
+
+    const malware = {
+        name: val.name,
+        malware: lista
+    };
+    const data = new collection(malware);
+    data.save();
+
     return val;
 };
