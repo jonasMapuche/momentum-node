@@ -2,6 +2,15 @@ const mongoose = require('mongoose');
 const document = "malware";
 const database = "letterDB";
 
+let list = new mongoose.Schema(
+	{
+	name: String,
+	rank: String,
+	check: Boolean,
+	description: String
+	}
+);
+
 let momentum = new mongoose.Schema(
 	{
 		name: String,
@@ -9,17 +18,8 @@ let momentum = new mongoose.Schema(
 		{
 			name: String,
 			export: Date,
-			framework: String/*,
-
-			list: [
-				{
-					name: String,
-					rank: String,
-					check: Boolean,
-					description: String
-				}
-			]
-			*/
+			framework: String,
+			list: [list]
 		}
 	},
 	{ collection: document }

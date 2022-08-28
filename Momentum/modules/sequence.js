@@ -11,24 +11,21 @@ exports.save = (req, res) => {
 };
 
 function save(val) {
-    /*
-    const item = new Array(item1 = {
-        name: val.list[0].name,
-        rank: val.list[0].rank,
-        check: val.list[0].check,
-        description: val.list[0].description
-    });
-    */
+
+    var item = val.list;
+
     let lista = {
         name: val.name,
         export: Date(),
-        framework: val.framework
+        framework: val.framework,
+        list: item
     };
 
     let malware = {
         name: val.name,
         malware: lista
     };
+
     let data = new momentum(malware);
     data.save();
 
