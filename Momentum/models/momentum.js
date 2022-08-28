@@ -1,14 +1,16 @@
 const mongoose = require('mongoose');
 const document = "malware";
+const database = "letterDB";
 
-const momentum = new mongoose.Schema(
+let momentum = new mongoose.Schema(
 	{
 		name: String,
 		malware: 
 		{
 			name: String,
 			export: Date,
-			framework: String,
+			framework: String/*,
+
 			list: [
 				{
 					name: String,
@@ -17,9 +19,10 @@ const momentum = new mongoose.Schema(
 					description: String
 				}
 			]
+			*/
 		}
 	},
 	{ collection: document }
 );
 
-module.exports = momentum;
+module.exports = mongoose.model(database, momentum);;

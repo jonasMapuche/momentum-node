@@ -33,9 +33,6 @@
     <Content Include="controllers\controller.js">
       <SubType>Code</SubType>
     </Content>
-    <Content Include="models\malware.js">
-      <SubType>Code</SubType>
-    </Content>
     <Content Include="models\momentum.js">
       <SubType>Code</SubType>
     </Content>
