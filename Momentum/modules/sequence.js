@@ -1,4 +1,7 @@
-let momentum = require('../models/momentum.js');
+import { momentum } from "../models/malware.ts";
+
+let activity = require('../models/activity.js');
+
 
 exports.hello = (req, res) => {
     res.send('Project for sequence momentum!');
@@ -26,7 +29,7 @@ function save(val) {
         malware: lista
     };
 
-    let data = new momentum(malware);
+    let data = new activity(malware);
     data.save();
 
     return val;

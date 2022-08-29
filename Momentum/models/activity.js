@@ -11,7 +11,7 @@ let list = new mongoose.Schema(
 	}
 );
 
-let momentum = new mongoose.Schema(
+let activity = new mongoose.Schema(
 	{
 		name: String,
 		malware: 
@@ -25,4 +25,4 @@ let momentum = new mongoose.Schema(
 	{ collection: document }
 );
 
-module.exports = mongoose.model(database, momentum);;
+module.exports = mongoose.model(database, activity);;

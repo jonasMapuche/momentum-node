@@ -5,6 +5,9 @@
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
     <Name>Momentum</Name>
     <RootNamespace>Momentum</RootNamespace>
+    <EnableTypeScript>true</EnableTypeScript>
+    <TypeScriptSourceMap>true</TypeScriptSourceMap>
+    <TypeScriptModuleKind>CommonJS</TypeScriptModuleKind>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -33,7 +36,13 @@
     <Content Include="controllers\controller.js">
       <SubType>Code</SubType>
     </Content>
-    <Content Include="models\momentum.js">
+    <Content Include="models\momentum.ts">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="models\activity.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="models\malware.ts">
       <SubType>Code</SubType>
     </Content>
     <Content Include="modules\sequence.js">
@@ -63,6 +72,11 @@
   <ItemGroup>
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="models\exercise.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
   <ProjectExtensions>
